@@ -23,6 +23,7 @@ import (
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/cockpit"
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/container"
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/datawarehouse"
+	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/dedibox"
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/domain"
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/edgeservices"
 	"github.com/scaleway/terraform-provider-scaleway/v2/internal/services/file"
@@ -149,6 +150,11 @@ func SDKProvider(config *Config) plugin.ProviderFunc {
 				"scaleway_datawarehouse_deployment":            datawarehouse.ResourceDeployment(),
 				"scaleway_datawarehouse_user":                  datawarehouse.ResourceUser(),
 				"scaleway_datawarehouse_database":              datawarehouse.ResourceDatabase(),
+				"scaleway_dedibox_server":                      dedibox.ResourceServer(),
+				"scaleway_dedibox_failover_ip":                 dedibox.ResourceFailoverIP(),
+				"scaleway_dedibox_rpn_group":                   dedibox.ResourceRpnGroup(),
+				"scaleway_dedibox_reverse_dns":                 dedibox.ResourceReverseDNS(),
+				"scaleway_dedibox_server_install":              dedibox.ResourceServerInstall(),
 				"scaleway_domain_record":                       domain.ResourceRecord(),
 				"scaleway_domain_registration":                 domain.ResourceRegistration(),
 				"scaleway_domain_zone":                         domain.ResourceZone(),
@@ -286,6 +292,11 @@ func SDKProvider(config *Config) plugin.ProviderFunc {
 				"scaleway_config":                              scwconfig.DataSourceConfig(),
 				"scaleway_container":                           container.DataSourceContainer(),
 				"scaleway_container_namespace":                 container.DataSourceNamespace(),
+				"scaleway_dedibox_offer":                       dedibox.DataSourceOffer(),
+				"scaleway_dedibox_server":                      dedibox.DataSourceServer(),
+				"scaleway_dedibox_failover_ip":                 dedibox.DataSourceFailoverIP(),
+				"scaleway_dedibox_rpn_group":                   dedibox.DataSourceRpnGroup(),
+				"scaleway_dedibox_os":                          dedibox.DataSourceOS(),
 				"scaleway_domain_record":                       domain.DataSourceRecord(),
 				"scaleway_domain_zone":                         domain.DataSourceZone(),
 				"scaleway_flexible_ip":                         flexibleip.DataSourceFlexibleIP(),
